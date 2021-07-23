@@ -12,19 +12,20 @@
         <h4>Wszelkie prawa zastrzeżone</h4>
     </div>
 
+    {% comment "Komentarz autora" %}
+    Lista postów
+    {% endcomment %}
+
+    {% for post in posts %}
     <div>
-        <p>To jest akapit</p>
-        <em>To jest wyróżiony tekst</em></br>
-        <b>To jest pogrubiony tekst</b></br>
-        <a href="https://strefakursow.pl/">Strefa Kursów</a>
+        <p>opublikowany: {{ post.publish_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <em>{{ post.text|linebreaksbr }}</em>
     </div>
+    {% endfor %}
 
     <div>
-        <ol>
-            <li>Element listy</li>
-            <li>Element listy</li>
-            <li>Element listy</li>
-        </ol>
+
     </div>
 
 </body>
